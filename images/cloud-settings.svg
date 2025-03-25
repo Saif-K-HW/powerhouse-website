@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="180" height="180" viewBox="0 0 180 180" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <g transform="translate(20 20)">
+        <!-- Cloud outline with gradient -->
+        <path d="M120 70C120 50 105 35 85 35C80 35 75 36 70 38C65 25 52 15 37 15C17 15 0 32 0 53C0 54 0 55 0 56C-12 60 -20 71 -20 85C-20 102 -6 115 10 115H105C115 115 120 110 120 100V70Z" 
+              stroke="url(#cloudGradient)" 
+              stroke-width="3"
+              fill="none"/>
+        
+        <!-- Gear icon -->
+        <path d="M60 45 L65 45 L67 55 L63 55 L60 45M
+                 75 52 L80 57 L73 65 L70 60 L75 52M
+                 82 70 L82 75 L72 77 L72 73 L82 70M
+                 75 88 L70 93 L62 86 L67 83 L75 88M
+                 60 95 L55 95 L53 85 L57 85 L60 95M
+                 45 88 L40 83 L47 75 L50 80 L45 88M
+                 38 70 L38 65 L48 63 L48 67 L38 70M
+                 45 52 L50 47 L58 54 L53 57 L45 52Z" 
+              stroke="#6C63FF" 
+              stroke-width="2"
+              fill="none"/>
+        
+        <!-- Center circles -->
+        <circle cx="60" cy="70" r="15" stroke="#6C63FF" stroke-width="2" fill="none"/>
+        <circle cx="60" cy="70" r="8" stroke="#6C63FF" stroke-width="2" fill="none"/>
+    </g>
+    
+    <!-- Gradient definition -->
+    <defs>
+        <linearGradient id="cloudGradient" x1="0" y1="0" x2="140" y2="140">
+            <stop offset="0%" stop-color="#6C63FF"/>
+            <stop offset="100%" stop-color="#5046E4"/>
+        </linearGradient>
+    </defs>
+</svg>

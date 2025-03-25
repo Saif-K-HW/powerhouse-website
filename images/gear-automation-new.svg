@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="180" height="180" viewBox="0 0 180 180" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <circle cx="90" cy="90" r="85" stroke="#6C63FF" stroke-width="2" opacity="0.1"/>
+    <circle cx="90" cy="90" r="65" stroke="#6C63FF" stroke-width="3" opacity="0.2"/>
+    <g transform="translate(90 90)">
+        <g id="gear" transform-origin="center">
+            <!-- Main gear body -->
+            <circle cx="0" cy="0" r="40" fill="#6C63FF" opacity="0.2"/>
+            <circle cx="0" cy="0" r="30" fill="#6C63FF" opacity="0.3"/>
+            <!-- Gear teeth -->
+            <path d="
+                M 0,-50 L 8,-48 L 10,-38 L 2,-40 Z
+                M 35.4,-35.4 L 41.4,-29.4 L 36.4,-21.4 L 30.4,-27.4 Z
+                M 50,0 L 48,8 L 38,10 L 40,2 Z
+                M 35.4,35.4 L 29.4,41.4 L 21.4,36.4 L 27.4,30.4 Z
+                M 0,50 L -8,48 L -10,38 L -2,40 Z
+                M -35.4,35.4 L -41.4,29.4 L -36.4,21.4 L -30.4,27.4 Z
+                M -50,0 L -48,-8 L -38,-10 L -40,-2 Z
+                M -35.4,-35.4 L -29.4,-41.4 L -21.4,-36.4 L -27.4,-30.4 Z
+            " fill="#6C63FF"/>
+            <!-- Inner details -->
+            <circle cx="0" cy="0" r="15" fill="#6C63FF" opacity="0.4"/>
+            <circle cx="0" cy="0" r="8" fill="#6C63FF"/>
+            <!-- Decorative lines -->
+            <path d="M -20,0 L -12,0 M 12,0 L 20,0 M 0,-20 L 0,-12 M 0,12 L 0,20" 
+                  stroke="#6C63FF" stroke-width="3" stroke-linecap="round"/>
+        </g>
+    </g>
+    <style>
+        #gear {
+            animation: spin 10s linear infinite;
+        }
+        @keyframes spin {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+    </style>
+</svg>

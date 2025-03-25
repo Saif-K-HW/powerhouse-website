@@ -2,70 +2,195 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="theme-color" content="#0a0a0a">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     <title>PowerHouse - Smart Home Energy Management</title>
     <link rel="stylesheet" href="css/styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
 </head>
 <body>
+    <div id="bg-canvas"></div>
+    
+    <div class="page-transition"></div>
+    
     <header>
         <nav>
             <div class="logo">POWERHOUSE</div>
             <div class="nav-links">
-                <a href="#home">Home</a>
-                <a href="#about">About us</a>
-                <a href="#" class="contact-btn">Contact Us</a>
+                <a href="#hero" class="nav-link">Home</a>
+                <a href="#features" class="nav-link">Features</a>
+                <a href="#discover" class="nav-link">About</a>
+                <a href="#contact" class="nav-link">Contact</a>
             </div>
         </nav>
     </header>
 
     <main>
         <section id="hero">
-            <h1>See It in Action</h1>
-            <p>Watch our demo video to experience the product firsthand and see how it simplifies energy tracking and automation.</p>
-            <div class="video-container">
-                <!-- Video placeholder -->
-                <div class="video-placeholder"></div>
+            <div class="hero-content" data-aos="fade-up">
+                <h1 class="gradient-text">Transform Your Home's Energy Management</h1>
+                <p class="typing-text">Smart. Efficient. Sustainable.</p>
+                <button class="cta-button magnetic">Get Started</button>
+                <div class="video-container">
+                    <video id="demo-video" width="848" height="480">
+                        <source src="videos/demo.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                    <div class="video-controls">
+                        <button id="playPauseBtn" class="video-btn">
+                            <svg class="play-icon" viewBox="0 0 24 24">
+                                <path d="M8 5v14l11-7z"/>
+                            </svg>
+                            <svg class="pause-icon" viewBox="0 0 24 24">
+                                <path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z"/>
+                            </svg>
+                        </button>
+                        <button id="muteBtn" class="video-btn">
+                            <svg class="volume-icon" viewBox="0 0 24 24">
+                                <path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02zM14 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77z"/>
+                            </svg>
+                            <svg class="mute-icon" viewBox="0 0 24 24">
+                                <path d="M16.5 12c0-1.77-1.02-3.29-2.5-4.03v2.21l2.45 2.45c.03-.2.05-.41.05-.63zm2.5 0c0 .94-.2 1.82-.54 2.64l1.51 1.51C20.63 14.91 21 13.5 21 12c0-4.28-2.99-7.86-7-8.77v2.06c2.89.86 5 3.54 5 6.71zM4.27 3L3 4.27 7.73 9H3v6h4l5 5v-6.73l4.25 4.25c-.67.52-1.42.93-2.25 1.18v2.06c1.38-.31 2.63-.95 3.69-1.81L19.73 21 21 19.73l-9-9L4.27 3zM12 4L9.91 6.09 12 8.18V4z"/>
+                            </svg>
+                        </button>
+                    </div>
+                </div>
             </div>
         </section>
 
         <section id="discover">
-            <h2>DISCOVER OUR STORY</h2>
-            <p class="subtitle">Learn more about POWERHOUSE</p>
-            <div class="story-content">
-                <div class="story-text">
-                    <p>POWERHOUSE is a smart home platform designed to help you track, optimize, and reduce energy consumption efficiently. With real-time monitoring, smart automation, and cost-saving insights, POWERHOUSE optimizes your home's energy use—saving you money while reducing your carbon footprint.</p>
-                    <p>No complicated setups or extra hardware required. With an intuitive app and mobile first UI, you're in control of your energy usage. Whether you're at home or on the go, POWERHOUSE makes smart energy management simple and efficient.</p>
-                    <button class="more-btn">More</button>
-                </div>
-                <div class="story-image">
-                    <img src="images/gear-icon.svg" alt="Settings gear icon">
+            <div class="discover-container">
+                <h2>DISCOVER OUR STORY</h2>
+                <p class="subtitle">Learn more about POWERHOUSE</p>
+                <div class="story-content">
+                    <div class="story-text">
+                        <p>POWERHOUSE is a smart home platform designed to help you track, optimize, and reduce energy consumption efficiently. With real-time monitoring, smart automation, and cost-saving insights, POWERHOUSE optimizes your home's energy use—saving you money while reducing your carbon footprint.</p>
+                        <p>No complicated setups or extra hardware required. With an intuitive app and mobile first UI, you're in control of your energy usage. Whether you're at home or on the go, POWERHOUSE makes smart energy management simple and efficient.</p>
+                        <button class="more-btn">More</button>
+                    </div>
+                    <div class="story-image">
+                        <img src="images/cloud-settings.png" alt="Smart automation settings icon">
+                    </div>
                 </div>
             </div>
         </section>
 
         <section id="features">
-            <h2>KEY FEATURES</h2>
+            <div class="section-title" data-aos="fade-up">
+                <h2>Why Choose PowerHouse?</h2>
+            </div>
             <div class="features-grid">
-                <div class="feature-card">
-                    <img src="images/energy-icon.svg" alt="Energy tracking icon">
+                <div class="feature-card" data-aos="fade-up" data-aos-delay="100">
+                    <div class="feature-icon">
+                        <img src="images/cloud-settings.png" alt="Cloud Automation">
+                    </div>
+                    <h3>Cloud Automation</h3>
+                    <p>Seamlessly automate your home's energy management through our cloud-based platform.</p>
+                </div>
+                <div class="feature-card" data-aos="fade-up" data-aos-delay="200">
+                    <img src="images/energy-tracking.svg" alt="Energy tracking icon">
                     <h3>REAL-TIME ENERGY TRACKING</h3>
                     <p>We face daily real-time tracking challenge ourselves and push the boundaries of what can be achieved.</p>
                 </div>
-                <div class="feature-card">
-                    <img src="images/interface-icon.svg" alt="Interface icon">
+                <div class="feature-card" data-aos="fade-up" data-aos-delay="300">
+                    <img src="images/user-interface.svg" alt="User interface icon">
                     <h3>USER FRIENDLY INTERFACE</h3>
                     <p>We designed shortcomings in the market and industry, that were ready to take our users if owing to.</p>
                 </div>
-                <div class="feature-card">
-                    <img src="images/savings-icon.svg" alt="Cost saving icon">
+                <div class="feature-card" data-aos="fade-up" data-aos-delay="400">
+                    <img src="images/cost-saving.svg" alt="Cost saving icon">
                     <h3>COST SAVING</h3>
                     <p>We help our users save costs consistently better with confidence, determination and professionalism.</p>
                 </div>
-                <div class="feature-card">
-                    <img src="images/automation-icon.svg" alt="Automation icon">
-                    <h3>SMART AUTOMATION</h3>
-                    <p>We tend focus to keeping our promises and doing right works for the future and our Customers to ensure the resilience of our digital ecosystem.</p>
+            </div>
+        </section>
+
+        <section id="blogs">
+            <h2>Blogs and Resources</h2>
+            <p class="subtitle">Stay informed with the latest tips, trends, and insights on smart home energy savings.</p>
+            
+            <div class="blog-grid">
+                <article class="blog-main">
+                    <div class="blog-image"></div>
+                    <div class="blog-content">
+                        <span class="tag">NEWS</span>
+                        <h3>Energy Saving</h3>
+                        <p>Class, found not less than a year ago by Blackbeard co-founder Michael Chasen, integrates exclusively...</p>
+                        <a href="#" class="read-more">Read more</a>
+                    </div>
+                </article>
+                
+                <div class="blog-sidebar">
+                    <article class="blog-card">
+                        <div class="blog-image"></div>
+                        <div class="blog-content">
+                            <div class="blog-text">
+                                <h3>Sustainability</h3>
+                                <p>Learn was never created to be a consumer product. Nevertheless, the...</p>
+                            </div>
+                            <span class="tag">NEWS</span>
+                        </div>
+                    </article>
+                    
+                    <article class="blog-card">
+                        <div class="blog-image"></div>
+                        <div class="blog-content">
+                            <div class="blog-text">
+                                <h3>Real-time tracking</h3>
+                                <p>This year, investors have reaped big financial returns from betting on Zoom...</p>
+                            </div>
+                            <span class="tag">NEWS</span>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact">
+            <div class="contact-container">
+                <h2>Contact Us</h2>
+                <p class="subtitle">Get in touch with our team</p>
+                <div class="contact-content">
+                    <form class="contact-form">
+                        <input type="text" placeholder="Your Name" required>
+                        <input type="email" placeholder="Your Email" required>
+                        <textarea placeholder="Your Message" required></textarea>
+                        <button type="submit" class="cta-button">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+        <section id="support">
+            <div class="support-content" data-aos="fade-up">
+                <div class="support-left">
+                    <div class="support-avatar"></div>
+                    <div class="support-info">
+                        <h2>24/7 Customer Support</h2>
+                        <div class="support-status">
+                            <span class="status-dot"></span>
+                            <span class="status-text">Online Now</span>
+                        </div>
+                        <p>Our team is here to help you with any questions</p>
+                    </div>
+                </div>
+                <button class="chat-btn magnetic">Start Chat</button>
+            </div>
+        </section>
+
+        <section id="newsletter">
+            <div class="newsletter-content">
+                <h2>Join Our Newsletter</h2>
+                <p>Stay updated with our latest offers and news.</p>
+                <div class="newsletter-form">
+                    <input type="email" placeholder="Enter your email address">
+                    <button type="submit">Subscribe</button>
                 </div>
             </div>
         </section>
@@ -75,9 +200,70 @@
         <div class="footer-content">
             <div class="logo">POWERHOUSE</div>
             <p>&copy; 2025 PowerHouse. All rights reserved.</p>
+            <div class="footer-section">
+                <h3>Contact Us</h3>
+                <p>Email: info@powerhouse.com</p>
+                <p>Phone: (555) 123-4567</p>
+            </div>
         </div>
     </footer>
 
-    <script src="js/main.js"></script>
+    <script src="js/background.js"></script>
+    <script src="js/animations.js"></script>
+    <script>
+        AOS.init({
+            duration: 1000,
+            once: true,
+            offset: 100
+        });
+    </script>
+    <script>
+        window.addEventListener('DOMContentLoaded', () => {
+            VANTA.WAVES({
+                el: "#bg-canvas",
+                mouseControls: true,
+                touchControls: true,
+                gyroControls: false,
+                minHeight: window.innerHeight,
+                minWidth: window.innerWidth,
+                scale: 1.00,
+                scaleMobile: 1.00,
+                color: 0x6c63ff,
+                shininess: 35,
+                waveHeight: 15,
+                waveSpeed: 0.75,
+                zoom: 0.75
+            });
+        });
+    </script>
+    <script>
+        const video = document.getElementById('demo-video');
+        const playPauseBtn = document.getElementById('playPauseBtn');
+        const muteBtn = document.getElementById('muteBtn');
+
+        playPauseBtn.addEventListener('click', () => {
+            if (video.paused) {
+                video.play();
+                playPauseBtn.querySelector('.play-icon').style.display = 'none';
+                playPauseBtn.querySelector('.pause-icon').style.display = 'block';
+            } else {
+                video.pause();
+                playPauseBtn.querySelector('.play-icon').style.display = 'block';
+                playPauseBtn.querySelector('.pause-icon').style.display = 'none';
+            }
+        });
+
+        muteBtn.addEventListener('click', () => {
+            if (video.muted) {
+                video.muted = false;
+                muteBtn.querySelector('.mute-icon').style.display = 'none';
+                muteBtn.querySelector('.volume-icon').style.display = 'block';
+            } else {
+                video.muted = true;
+                muteBtn.querySelector('.mute-icon').style.display = 'block';
+                muteBtn.querySelector('.volume-icon').style.display = 'none';
+            }
+        });
+    </script>
 </body>
 </html>

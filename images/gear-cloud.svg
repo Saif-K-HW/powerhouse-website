@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="180" height="180" viewBox="0 0 180 180" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <!-- Cloud shape -->
+    <path d="M140 90C140 70 125 55 105 55C100 55 95 56 90 58C85 45 72 35 57 35C37 35 20 52 20 73C20 74 20 75 20 76C8 80 0 91 0 105C0 122 14 135 30 135H125C135 135 140 130 140 120V90Z" 
+          stroke="#6C63FF" 
+          stroke-width="4"
+          fill="none"
+          opacity="0.2"/>
+    
+    <!-- Gear -->
+    <g transform="translate(90 90)" id="gear">
+        <!-- Main gear -->
+        <path d="M0 -35L5 -34L7 -25L2 -26L0 -35Z
+                 M25 -25L32 -18L28 -10L21 -17L25 -25Z
+                 M35 0L34 5L25 7L26 2L35 0Z
+                 M25 25L18 32L10 28L17 21L25 25Z
+                 M0 35L-5 34L-7 25L-2 26L0 35Z
+                 M-25 25L-32 18L-28 10L-21 17L-25 25Z
+                 M-35 0L-34 -5L-25 -7L-26 -2L-35 0Z
+                 M-25 -25L-18 -32L-10 -28L-17 -21L-25 -25Z" 
+              fill="#6C63FF"/>
+        <circle cx="0" cy="0" r="20" fill="#6C63FF"/>
+        <circle cx="0" cy="0" r="15" fill="#6C63FF" opacity="0.7"/>
+        <circle cx="0" cy="0" r="8" fill="#6C63FF" opacity="0.5"/>
+    </g>
+    <style>
+        #gear {
+            transform-origin: center;
+            animation: spin 8s linear infinite;
+        }
+        @keyframes spin {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+    </style>
+</svg>
